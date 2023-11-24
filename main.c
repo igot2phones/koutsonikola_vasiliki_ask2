@@ -29,3 +29,16 @@ void open(){
         printf("File opened successfully!\n");
     }
 }
+
+void close(){
+    fclose(f);
+}
+
+void read(){
+    if (f == NULL){
+        printf("There is no open file please open one first !!\n");
+    } else {
+        // Synexise edw to read
+    }
+    
+}
