@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> // gia na min paraponietai o compiler gia tin exit(0); stin grammh 41
+#include <sys/stat.h> // gia na doulepsi to chmod 
 #define MAX_FILE_NAME 500
 #define MAX_LENGTH 101
 
@@ -47,7 +48,6 @@ int main(){
         
     }
     
-
 }
 
 void open(){
@@ -62,10 +62,12 @@ void open(){
             printf("Cannot open file %s\n", file_name);
         } else {
             printf("File created successfully!\n");
+            chmod(file_name, 0600); // 0600 gia na min mporei na to diavasei kaneis ektos apo ton owner
         }
         
     } else {
         printf("File opened successfully!\n");
+        chmod(file_name, 0600); // 0600 gia na min mporei na to diavasei kaneis ektos apo ton owner (ksana)
     }
 }
 
